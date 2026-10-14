@@ -1,0 +1,1 @@
+import"../chunks/DsnmJJEf.js";import"../chunks/D3gVPDrr.js";import{A as r}from"../chunks/BnFZfDd9.js";import{M as p}from"../chunks/BAx0Sabs.js";function s(o){r(o,{role:"pic_mapel",title:"Matematika",children:(t,a)=>{p(t,{})},$$slots:{default:!0}})}export{s as component};
