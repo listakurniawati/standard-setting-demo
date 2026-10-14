@@ -140,19 +140,11 @@
   const TOUR_KEY = 'ssd-tour';
   const TOURS = {
     panelis: {
-      title: 'Tur Panelis', path: '/panelis', account: () => accounts.accounts.find((a) => a.role === 'Panelis'),
+      // The panelist page has its own welcome screen and in-app tour; the demo only opens it fresh for Citra (simulation project).
+      title: 'Tur Panelis', path: '/panelis', fresh: true, account: () => accounts.accounts.find((a) => a.role === 'Panelis' && /^004\./.test(a.username)) || accounts.accounts.find((a) => a.role === 'Panelis'),
       steps: [
-        { sel: '.panelist-header', title: 'Borang penilaian Anda', body: 'Anda masuk sebagai <b>Sari Pertiwi</b>, panelis Matematika. Judul menunjukkan putaran yang sedang berjalan. Borang hanya berisi butir yang ditugaskan ke mapel Anda.' },
-        { sel: '.text-size', title: 'Ukuran teks', body: 'Bila huruf terasa kecil, pilih <b>A+</b> atau <b>A++</b>. Pilihan ini diingat di komputer Anda.' },
-        { sel: '.guide', title: 'Petunjuk pengisian', body: 'Ringkasan cara mengisi beserta contoh. Klik judulnya untuk membuka atau menyembunyikan.' },
-        { sel: '.form-progress', title: 'Progres', body: 'Menghitung butir yang <b>sudah tersimpan</b>. Tombol <b>Ke butir yang belum diisi</b> langsung membawa Anda ke butir berikutnya yang masih kosong.' },
-        { sel: '.question-nav', title: 'Daftar butir', body: 'Klik nomor butir untuk melompat. Tulisan <b>Selesai</b> berarti sudah tersimpan, <b>Belum</b> berarti masih perlu diisi.' },
-        { sel: '.question-card .single-score', title: 'Butir Pilihan Ganda', body: 'Bayangkan 100 kandidat yang kemampuannya <b>tepat di batas lulus</b>. Tulis berapa dari mereka yang Anda perkirakan menjawab benar (0–100). Bisa diketik langsung atau memakai tombol <b>−</b> / <b>+</b>.' },
-        { sel: '.question-card .distribution-wrap', title: 'Butir PG Kompleks / Essay', body: 'Bagikan 100 kandidat batas lulus ke setiap skor. Kotak di bawahnya membantu menghitung: <b>Kurang</b>, <b>Lebih</b>, atau <b>Pas ✓</b>.' },
-        { sel: '.question-card .previous-round', title: 'Jawaban putaran sebelumnya', body: 'Jawaban Anda di putaran 1 ditampilkan sebagai pembanding. Setelah diskusi panel, Anda boleh mengubah atau mempertahankannya.' },
-        { sel: '.question-card .question-status', title: 'Tersimpan otomatis', body: 'Jawaban disimpan otomatis setelah Anda berhenti mengetik. Statusnya berubah menjadi <b>Tersimpan</b>. Bila koneksi gagal, muncul tombol <b>Coba Simpan Lagi</b>.' },
-        { sel: '.sticky-actions', title: 'Tombol di bawah layar', body: '<b>Simpan Sekarang</b> mengirim semua isian sekaligus (biasanya tidak perlu, karena sudah otomatis). <b>Butir berikutnya yang belum diisi</b> membawa Anda ke butir yang masih kosong.' },
-        { sel: '.question-card:nth-of-type(4)', title: 'Coba sekarang', body: 'Isi butir ini, misalnya <b>70</b>, lalu lihat progres naik menjadi 4 dari 6. Setelah semua panelis lengkap, PIC Mapel dapat memfinalisasi putaran.', next: 'pic' }
+        { sel: '.welcome-card', title: 'Halaman pertama panelis', body: 'Anda masuk sebagai <b>Citra</b>, panelis IPA. Setelah login, panelis disambut dan melihat urutan kegiatannya: <b>latihan (simulasi) → penilaian → selesai</b>. Tutup kartu ini, lalu klik <b>Lihat tur singkat</b> untuk tur di dalam aplikasi, kemudian kerjakan 3 butir latihan.' },
+        { sel: '.welcome-card .stage-actions', title: 'Setelah latihan', body: 'Selesai latihan, panelis melihat layar <b>Menunggu PIC Mapel</b>. Begitu PIC IPA (<b>Bambang</b>) menekan <b>Akhiri Simulasi &amp; Mulai Putaran 1</b>, layar panelis berganti sendiri ke tombol <b>Mulai Putaran 1</b>. Coba lewat label Mode demo: login sebagai Bambang.', next: 'pic' }
       ]
     },
     pic: {
@@ -162,7 +154,7 @@
         { sel: '.card.data-table', title: 'Antrean panelis', body: 'Progres tiap panelis dan kapan terakhir aktif, diperbarui tiap 10 detik. Status: <b>Selesai</b>, <b>Menilai</b>, <b>Perlu Perhatian</b> (sudah mulai tapi tidak aktif lebih dari 24 jam), dan <b>Belum Menilai</b>.' },
         { sel: '.monitor-row:nth-of-type(3) .eye-button', title: 'Lihat isian panelis', body: 'Tombol mata membuka isian panelis. Hanya bisa dilihat: PIC tidak dapat mengubah jawaban panelis.' },
         { before: () => clickFirst('.monitor-row:nth-of-type(3) .eye-button'), sel: '.drawer', title: 'Preview jawaban', body: 'Semua butir yang dialokasikan beserta jawaban tersimpan panelis. Butir yang belum diisi bertanda <b>Belum</b>, sehingga mudah melihat siapa yang perlu diingatkan.' },
-        { before: () => clickFirst('[aria-label="Tutup preview"]'), sel: '.monitor-summary', title: 'Ringkasan penilaian', body: 'Statistik baru muncul setelah <b>semua panelis menyelesaikan semua butir</b>: cut-off tes dalam skor mentah dan persen, median, simpangan baku, dan rentang.' },
+        { before: () => clickFirst('[aria-label="Tutup preview"]'), sel: '.monitor-summary', title: 'Statistik putaran', body: 'Statistik baru muncul setelah <b>semua panelis menyelesaikan semua butir</b>: cut-off tes dalam skor mentah dan persen, median, simpangan baku, dan rentang.' },
         { sel: '.section-head .button', title: 'Unduh laporan', body: 'Mengunduh progres semua panelis untuk putaran ini dalam bentuk CSV.' },
         { sel: '.sticky-actions', title: 'Finalisasi atau rollback', body: '<b>Finalisasi Putaran</b> aktif setelah semua respons lengkap, dengan konfirmasi dua tahap (mengetik frasa). Finalisasi mengunci putaran ini dan membuka putaran berikutnya, lengkap dengan riwayat jawaban. <b>Rollback</b> kembali ke putaran sebelumnya tanpa menghapus respons.' },
         { sel: '.card.data-table', title: 'Coba sendiri', body: 'Supaya tombol Finalisasi aktif, login sebagai <b>Sari</b> dan <b>Andi</b> lewat label Mode demo, lengkapi borang mereka, lalu kembali sebagai Rina.', next: 'panelis' }
@@ -203,6 +195,9 @@
       if (!res.ok || json.data?.user?.mustChangePassword) throw new Error(json.message || 'Password akun demo sudah diganti');
       const d = json.data;
       store.set(SESSION_KEY, JSON.stringify({ accessToken: d.accessToken, refreshToken: d.refreshToken, expiresAt: Date.now() + d.expiresIn * 1000, user: d.user }));
+      if (def.fresh) { // show the panelist's welcome and practice intro again
+        try { for (const key of Object.keys(localStorage)) if (key === `ss-sambutan-${d.user.id}` || key.startsWith(`ss-putaran-${d.user.id}-`)) localStorage.removeItem(key); } catch { /* ignore */ }
+      }
       tour = { kind, step: 0 }; saveTour();
       location.href = `${base}${def.path}`;
     } catch (error) {
