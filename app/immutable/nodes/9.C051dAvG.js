@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import{p as a,b as s,g as p,u}from"../chunks/f-0Vx6v1.js";import{p as r}from"../chunks/CvA5odx9.js";import{M as m}from"../chunks/BAx0Sabs.js";function g(e,t){a(t,!0);const o=u(()=>r.url.searchParams.get("subject")||"MAT");m(e,{admin:!0,get projectId(){return r.params.id},get subjectCode(){return p(o)}}),s()}export{g as component};
