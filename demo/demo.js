@@ -12,6 +12,22 @@
     remove(key) { try { localStorage.removeItem(key); } catch { /* ignore */ } }
   };
 
+  // Panelist screens remember welcome / round start / practice timer per browser; a fresh demo must forget them.
+  function clearPanelistFlags() {
+    try { for (const key of Object.keys(localStorage)) if (/^ss-(sambutan|putaran|simulasi)-/.test(key)) localStorage.removeItem(key); } catch { /* ignore */ }
+  }
+  const fingerprint = (text) => { let h = 0; for (let i = 0; i < text.length; i++) h = (h * 31 + text.charCodeAt(i)) | 0; return `${text.length}:${h}`; };
+  const SEED_KEY = 'ss-demo-seed';
+  let seedText = '';
+  async function loadSeed() { seedText = await (await fetch(`${base}/demo/seed.json`, { cache: 'no-cache' })).text(); return seedText; }
+  // Start the demo again from the seed data (used by Reset and by the panelist tour).
+  function resetDemo() {
+    clearPanelistFlags(); store.remove(SESSION_KEY);
+    const error = globalThis.ssImport(seedText);
+    if (error) throw new Error(`Data demo gagal dimuat: ${error}`);
+    store.set(STATE_KEY, seedText); store.set(SEED_KEY, fingerprint(seedText));
+  }
+
   let markReady;
   const ready = new Promise((resolve, reject) => { markReady = { resolve, reject }; });
 
@@ -26,13 +42,10 @@
       result = await WebAssembly.instantiate(bytes, go.importObject);
     }
     go.run(result.instance);
-    let saved = store.get(STATE_KEY);
-    if (!saved || globalThis.ssImport(saved) !== '') {
-      saved = await (await fetch(`${base}/demo/seed.json`, { cache: 'no-cache' })).text();
-      const error = globalThis.ssImport(saved);
-      if (error) throw new Error(`Data demo gagal dimuat: ${error}`);
-      store.set(STATE_KEY, saved);
-    }
+    await loadSeed();
+    // A newly published demo (different seed) starts fresh instead of reusing old browser data.
+    const saved = store.get(STATE_KEY);
+    if (!saved || store.get(SEED_KEY) !== fingerprint(seedText) || globalThis.ssImport(saved) !== '') resetDemo();
   }
   boot().then(() => { markReady.resolve(); setStatus('ready'); }, (error) => { markReady.reject(error); setStatus('error', error.message); });
 
@@ -120,7 +133,7 @@
         <div class="ssd-body">
         <p>Data contoh fiktif; perubahan hanya tersimpan di browser ini.</p>
         ${status === 'error' ? `<p style="color:#b03a2e">${statusText}</p>` : ''}
-        <div class="ssd-tours"><b>Tur terpandu</b><div><button data-tour="panelis">▶ Tur Panelis</button><button data-tour="pic">▶ Tur PIC Mapel</button></div></div>
+        <div class="ssd-tours"><b>Tur terpandu</b><div><button data-tour="panelis">▶ Tur Panelis</button><button data-tour="pic">▶ Tur PIC Mapel</button></div><small>Tur Panelis memulai ulang data demo, jadi Citra mulai dari sambutan.</small></div>
         ${tourError ? `<p style="color:#b03a2e">${tourError}</p>` : ''}
         <p>Klik akun untuk mengisi form login · password <code>${accounts.password}</code></p>
         <div class="ssd-acc">${accounts.accounts.map(a => `<button data-user="${a.username}" title="${a.role} · ${a.name}"><span class="ssd-role">${a.role === 'Admin Super' ? 'Admin' : a.role === 'PIC Mapel' ? 'PIC' : 'Panelis'}</span><span class="ssd-name">${a.name}</span><small><code>${a.username}</code></small></button>`).join('')}</div>
@@ -135,7 +148,7 @@
     if (!t) return;
     if (t.dataset.tour) return startTour(t.dataset.tour);
     if (t.dataset.user) return fillLogin(t.dataset.user);
-    if ('reset' in t.dataset) { store.remove(STATE_KEY); store.remove(SESSION_KEY); location.href = `${base}/login`; return; }
+    if ('reset' in t.dataset) { store.remove(STATE_KEY); store.remove(SESSION_KEY); clearPanelistFlags(); location.href = `${base}/login`; return; }
     open = 'toggle' in t.dataset ? !open : false;
     render();
   });
@@ -197,6 +210,8 @@
     tourError = '';
     try {
       await ready;
+      // The panelist tour always starts from a fresh demo so Citra sees the welcome and the practice again.
+      if (def.fresh) resetDemo();
       const account = def.account();
       if (!account) throw new Error('Akun demo tidak ditemukan');
       const res = await globalThis.ssDemoFetch(`${location.origin}/api/v1/auth/login`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ username: account.username, password: accounts.password }) });
@@ -204,9 +219,6 @@
       if (!res.ok || json.data?.user?.mustChangePassword) throw new Error(json.message || 'Password akun demo sudah diganti');
       const d = json.data;
       store.set(SESSION_KEY, JSON.stringify({ accessToken: d.accessToken, refreshToken: d.refreshToken, expiresAt: Date.now() + d.expiresIn * 1000, user: d.user }));
-      if (def.fresh) { // show the panelist's welcome and practice intro again
-        try { for (const key of Object.keys(localStorage)) if (key === `ss-sambutan-${d.user.id}` || key.startsWith(`ss-putaran-${d.user.id}-`)) localStorage.removeItem(key); } catch { /* ignore */ }
-      }
       tour = { kind, step: 0 }; saveTour();
       location.href = `${base}${def.path}`;
     } catch (error) {
