@@ -52,15 +52,20 @@
   fetch(`${base}/demo/accounts.json`).then(r => r.json()).then(data => { accounts = data; render(); }).catch(() => {});
 
   const css = `
-  .ssd{position:fixed;left:12px;bottom:12px;transition:bottom .2s;z-index:9999;font:13px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:#13302d}
-  .ssd.raised{bottom:86px}
+  /* Demo tab sits on the right edge (vertical), so it never covers the header, footers or bottom buttons. */
+  .ssd{position:fixed;top:38%;right:0;z-index:9999;font:13px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif;color:#13302d}
   .ssd *{box-sizing:border-box}
-  .ssd-pill{display:flex;align-items:center;gap:8px;background:#fff7e6;border:1px solid #f0c27a;border-radius:999px;padding:7px 12px;box-shadow:0 4px 16px rgba(0,0,0,.12);cursor:pointer}
+  .ssd-pill{display:flex;align-items:center;gap:7px;writing-mode:vertical-rl;transform:rotate(180deg);background:#fff7e6;border:1px solid #f0c27a;border-left:0;border-radius:0 10px 10px 0;padding:12px 5px;box-shadow:-2px 0 10px rgba(0,0,0,.10);cursor:pointer;font-size:12.5px;white-space:nowrap}
+  .ssd-pill:hover{background:#ffefcf}.ssd-pill:focus-visible{outline:2px solid #2f6f69;outline-offset:2px}
+  .ssd-caret{display:none}
   .ssd-pill b{color:#8a4b00}
   .ssd-dot{width:8px;height:8px;border-radius:50%;background:#c58a2a}
   .ssd-dot.ready{background:#2e8b57}.ssd-dot.error{background:#c0392b}
-  .ssd-panel{margin-bottom:8px;width:min(380px,calc(100vw - 24px));max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px);background:#fff;border:1px solid #d6e2df;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);display:flex;flex-direction:column;overflow:hidden}
-  .ssd.raised .ssd-panel{max-height:calc(100vh - 154px);max-height:calc(100dvh - 154px)}
+  .ssd-panel{position:fixed;right:36px;top:76px;width:min(380px,calc(100vw - 24px));max-height:calc(100vh - 100px);max-height:calc(100dvh - 100px);background:#fff;border:1px solid #d6e2df;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.18);display:flex;flex-direction:column;overflow:hidden}
+  @media (max-width:899px){
+    .ssd-pill .ssd-more{display:none}
+    .ssd-panel{right:8px;left:8px;width:auto;top:72px;max-height:calc(100dvh - 150px)}
+  }
   .ssd-head{padding:12px 14px 8px;border-bottom:1px solid #e3ecea}
   .ssd-body{padding:10px 14px;display:grid;gap:9px;overflow-y:auto;overscroll-behavior:contain;min-height:0}
   .ssd-foot{padding:8px 14px;border-top:1px solid #e3ecea;background:#fafcfb}
@@ -122,7 +127,8 @@
         </div>
         <div class="ssd-foot ssd-row"><small>Bisa dicoba bergantian.</small><button class="ssd-reset" data-reset>Reset data demo</button></div>
       </div>` : ''}
-      <div class="ssd-pill" role="button" tabindex="0" data-toggle><span class="ssd-dot ${status}"></span><b>${label}</b><span>· tur, akun & reset</span></div>`;
+      <div class="ssd-pill" role="button" tabindex="0" aria-expanded="${open}" data-toggle><span class="ssd-dot ${status}"></span><b>${label}</b><span class="ssd-more">· tur, akun & reset</span><span class="ssd-caret" aria-hidden="true">▼</span></div>`;
+    root.classList.toggle('open', open);
   }
   root.addEventListener('click', (event) => {
     const t = event.target.closest('[data-toggle],[data-close],[data-user],[data-reset],[data-tour]');
@@ -133,7 +139,10 @@
     open = 'toggle' in t.dataset ? !open : false;
     render();
   });
-  root.addEventListener('keydown', (event) => { if (event.key === 'Enter' && event.target.matches('[data-toggle]')) { open = !open; render(); } });
+  root.addEventListener('keydown', (event) => { if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-toggle]')) { event.preventDefault(); open = !open; render(); } });
+  // Close the panel with Esc or a click elsewhere.
+  document.addEventListener('keydown', (event) => { if (event.key === 'Escape' && open) { open = false; render(); } });
+  document.addEventListener('click', (event) => { if (open && !event.composedPath().includes(root)) { open = false; render(); } });
 
 
   // ---- Guided tours (Panelis / PIC Mapel) ---------------------------------
@@ -144,7 +153,7 @@
       title: 'Tur Panelis', path: '/panelis', fresh: true, account: () => accounts.accounts.find((a) => a.role === 'Panelis' && /^004\./.test(a.username)) || accounts.accounts.find((a) => a.role === 'Panelis'),
       steps: [
         { sel: '.welcome-card', title: 'Halaman pertama panelis', body: 'Anda masuk sebagai <b>Citra</b>, panelis IPA. Setelah login, panelis disambut dan melihat urutan kegiatannya: <b>latihan (simulasi) → penilaian → selesai</b>. Tutup kartu ini, lalu klik <b>Lihat tur singkat</b> untuk tur di dalam aplikasi, kemudian kerjakan 3 butir latihan.' },
-        { sel: '.welcome-card .stage-actions', title: 'Setelah latihan', body: 'Selesai latihan, panelis melihat layar <b>Menunggu PIC Mapel</b>. Begitu PIC IPA (<b>Bambang</b>) menekan <b>Akhiri Simulasi &amp; Mulai Putaran 1</b>, layar panelis berganti sendiri ke tombol <b>Mulai Putaran 1</b>. Coba lewat label Mode demo: login sebagai Bambang.', next: 'pic' }
+        { sel: '.welcome-card .stage-actions', title: 'Setelah latihan', body: 'Simulasi berlangsung 10 menit. Setelah menekan <b>Saya selesai simulasi</b> (atau waktunya habis), panelis melihat layar <b>Menunggu PIC Mapel</b>. Begitu PIC IPA (<b>Bambang</b>) menekan <b>Akhiri Simulasi &amp; Mulai Putaran 1</b>, layar panelis berganti sendiri ke tombol <b>Mulai Putaran 1</b>. Coba lewat label Mode demo: login sebagai Bambang.', next: 'pic' }
       ]
     },
     pic: {
