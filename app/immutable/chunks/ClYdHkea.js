@@ -1,1 +1,0 @@
-import{w as o}from"./Be82NGK2.js";import{r,w as s}from"./LkF_VoZB.js";function a(){const e=o(r());return{subscribe:e.subscribe,set(t){s(t),e.set(t)},clear(){s(null),e.set(null)},hydrate(){e.set(r())}}}const u=a();export{u as a};
