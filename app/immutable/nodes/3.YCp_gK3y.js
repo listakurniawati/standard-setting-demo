@@ -1,1 +1,0 @@
-import"../chunks/DsnmJJEf.js";import"../chunks/Bua6ubV2.js";import{a as p,c as o}from"../chunks/C0NS03fd.js";var r=o('<div class="route-loading" aria-live="polite"><span class="spinner"></span> <span>Menyiapkan ruang kerja...</span></div>');function t(a){var n=r();p(a,n)}export{t as component};
