@@ -1,0 +1,1 @@
+import{p as t,u as r}from"./UIDINqx4.js";const e={get data(){return t.data},get error(){return t.error},get form(){return t.form},get params(){return t.params},get route(){return t.route},get state(){return t.state},get status(){return t.status},get url(){return t.url}},a={get current(){return r.current}},s=e,n=a;export{s as p,n as u};
