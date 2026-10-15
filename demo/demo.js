@@ -172,14 +172,16 @@
     pic: {
       title: 'Tur PIC Mapel', path: '/pic', account: () => accounts.accounts.find((a) => a.role === 'PIC Mapel'),
       steps: [
-        { sel: '.timeline', title: 'Putaran penilaian', body: 'Anda masuk sebagai <b>Rina Wulandari</b>, PIC Matematika. Putaran 1 sudah difinalisasi, putaran 2 sedang berlangsung. Putaran berikutnya terbuka otomatis saat putaran ini difinalisasi.' },
-        { sel: '.card.data-table', title: 'Antrean panelis', body: 'Progres tiap panelis dan kapan terakhir aktif, diperbarui tiap 10 detik. Status: <b>Selesai</b>, <b>Menilai</b>, <b>Perlu Perhatian</b> (sudah mulai tapi tidak aktif lebih dari 24 jam), dan <b>Belum Menilai</b>.' },
-        { sel: '.monitor-row:nth-of-type(3) .eye-button', title: 'Lihat isian panelis', body: 'Tombol mata membuka isian panelis. Hanya bisa dilihat: PIC tidak dapat mengubah jawaban panelis.' },
-        { before: () => clickFirst('.monitor-row:nth-of-type(3) .eye-button'), sel: '.drawer', title: 'Preview jawaban', body: 'Semua butir yang dialokasikan beserta jawaban tersimpan panelis. Butir yang belum diisi bertanda <b>Belum</b>, sehingga mudah melihat siapa yang perlu diingatkan.' },
-        { before: () => clickFirst('[aria-label="Tutup preview"]'), sel: '.monitor-summary', title: 'Statistik putaran', body: 'Statistik baru muncul setelah <b>semua panelis menyelesaikan semua butir</b>: cut-off tes dalam skor mentah dan persen, median, simpangan baku, dan rentang.' },
-        { sel: '.section-head .button', title: 'Unduh laporan', body: 'Mengunduh progres semua panelis untuk putaran ini dalam bentuk CSV.' },
+        { sel: '.timeline', title: 'Putaran penilaian', body: 'Anda masuk sebagai <b>Rina Wulandari</b>, PIC Matematika. Putaran 1 sudah dikunci, Putaran 2 sedang berlangsung. Klik <b>Putaran 1</b> untuk melihat hasilnya (hanya baca).' },
+        { sel: '.jqc-editor', title: 'Definisi JQC', body: 'Definisi <b>peserta minimal kompeten</b> yang Anda tulis tampil di borang semua panelis sebagai pegangan bersama. Klik judulnya untuk membuka dan mengubah.' },
+        { sel: '.monitor-queue', title: 'Antrean panelis', body: 'Progres tiap panelis dan kapan terakhir aktif, diperbarui tiap 10 detik. Status: <b>Selesai</b> (sudah klik Saya selesai), <b>Lengkap, belum klik Selesai</b> (tinggal diingatkan), <b>Sedang mengisi</b>, dan <b>Belum mulai</b>. Panelis yang lama tidak menyimpan diberi penanda <b>tidak aktif sejak …</b>.' },
+        { sel: '.queue-row:nth-of-type(2) .eye-button', title: 'Lihat isian panelis', body: 'Tombol mata membuka isian panelis. Hanya bisa dilihat: PIC tidak dapat mengubah jawaban panelis.' },
+        { before: () => clickFirst('.queue-row:nth-of-type(2) .eye-button'), sel: '.drawer', title: 'Preview jawaban', body: 'Semua butir yang dialokasikan beserta jawaban tersimpan panelis. Butir yang belum diisi bertanda <b>Belum</b>, sehingga mudah melihat siapa yang perlu diingatkan.' },
+        { before: () => clickFirst('[aria-label="Tutup preview"]'), sel: '.monitor-stats', title: 'Statistik putaran', body: 'Statistik baru muncul setelah <b>semua panelis menyelesaikan semua butir</b>: cut-off tes dalam skor mentah dan persen, median, simpangan baku, dan rentang.' },
+        { sel: '.compare-table', title: 'Hasil per butir antarputaran', body: 'Cut-off dan simpangan baku setiap butir di <b>Putaran 1, 2, …</b> berdampingan, beserta perubahannya. SD yang turun berarti panel makin sepakat; centang <b>Hanya yang kurang sepakat</b> untuk fokus diskusi.' },
+        { sel: '.page-head .head-actions', title: 'Laporan', body: '<b>Cetak Laporan (PDF)</b> untuk pemangku kepentingan dan <b>Unduh CSV</b> progres panelis.' },
         { sel: '.sticky-actions', title: 'Finalisasi atau rollback', body: '<b>Finalisasi Putaran</b> aktif setelah semua panelis menekan <b>Saya selesai Putaran N</b>, dengan konfirmasi dua tahap (mengetik frasa). Finalisasi mengunci putaran, membagikan hasilnya (tanpa nama) ke semua panelis beserta sorotan butir yang kurang sepakat, lalu membuka putaran berikutnya. <b>Rollback</b> kembali ke putaran sebelumnya tanpa menghapus respons.' },
-        { sel: '.card.data-table', title: 'Coba sendiri', body: 'Budi sudah mengirim Putaran 2. Supaya tombol Finalisasi aktif, login sebagai <b>Sari</b> dan <b>Andi</b> lewat label Mode demo, lengkapi borang lalu tekan <b>Saya selesai Putaran 2</b>, kemudian kembali sebagai Rina.', next: 'panelis' }
+        { sel: '.monitor-queue', title: 'Coba sendiri', body: 'Budi sudah mengirim Putaran 2. Supaya tombol Finalisasi aktif, login sebagai <b>Sari</b> dan <b>Andi</b> lewat label Mode demo, lengkapi borang lalu tekan <b>Saya selesai Putaran 2</b>, kemudian kembali sebagai Rina.', next: 'panelis' }
       ]
     }
   };
