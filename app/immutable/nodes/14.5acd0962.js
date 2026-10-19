@@ -1,0 +1,1 @@
+import"../chunks/dda01276.js";import"../chunks/6eac5796.js";import{A as p}from"../chunks/c2dc1ed9.js";import{M as t}from"../chunks/c667bda0.js";function s(o){p(o,{role:"pic_mapel",children:(r,e)=>{t(r,{})},$$slots:{default:!0}})}export{s as component};
