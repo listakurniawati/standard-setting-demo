@@ -1,0 +1,1 @@
+function r(a){const e=new URL(a||location.href,location.href);e.searchParams.set("_v",String(Date.now())),location.replace(e.href)}function t(){const a=new URL(location.href);a.searchParams.has("_v")&&(a.searchParams.delete("_v"),history.replaceState(history.state,"",a.pathname+a.search+a.hash))}export{r as f,t as s};
