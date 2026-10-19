@@ -1,88 +1,237 @@
 {
  "password": "demo123",
+ "groups": {
+  "Admin": "Kelola proyek, butir, akun, riwayat aktivitas, salin proyek",
+  "Proyek 001 · Asesmen Oktober 2026 (aktif)": "MAT putaran 2 berjalan, BIN putaran 1",
+  "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)": "Panelis berlatih 3 butir contoh; PIC mengakhiri simulasi",
+  "Proyek 005 · Uji Coba Lengkap (semua akun baru)": "Mulai dari nol: kontak, sambutan, tur, simulasi, JQC",
+  "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, kuesioner",
+  "Proyek 002 · Uji Coba IPA (selesai)": "Hasil final terkunci, rekap kuesioner"
+ },
  "accounts": [
   {
+   "group": "Admin",
    "role": "Admin Super",
    "name": "Master BP3",
-   "username": "master.bp3"
+   "username": "master.bp3",
+   "note": "Semua menu; coba Salin proyek dan tab Riwayat Aktivitas di Akun Pengguna"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "PIC Mapel",
-   "name": "Rina Wulandari (Matematika)",
-   "username": "001.mat.pic1"
+   "name": "Rina Wulandari · Matematika",
+   "username": "001.mat.pic1",
+   "note": "Putaran 2 berjalan: antrean, tanda Perlu dicek, koneksi tidak stabil, mode diskusi, ekspor"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "Panelis",
-   "name": "Sari Pertiwi (Matematika)",
-   "username": "001.mat.panelis2"
+   "name": "Budi Santoso · Matematika",
+   "username": "001.mat.panelis1",
+   "note": "Sudah kirim putaran 2, menunggu PIC mengunci"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "Panelis",
-   "name": "Andi Prasetyo (Matematika, belum mengisi)",
-   "username": "001.mat.panelis3"
+   "name": "Sari Pertiwi · Matematika",
+   "username": "001.mat.panelis2",
+   "note": "Sedang mengisi putaran 2: hasil putaran 1, catatan per butir"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
+   "role": "Panelis",
+   "name": "Andi Prasetyo · Matematika",
+   "username": "001.mat.panelis3",
+   "note": "Belum mengisi putaran 2"
+  },
+  {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "PIC Mapel",
-   "name": "Dewi Lestari (Bahasa Indonesia)",
-   "username": "001.bin.pic1"
+   "name": "Dewi Lestari · Bahasa Indonesia",
+   "username": "001.bin.pic1",
+   "note": "Putaran 1 berjalan"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "Panelis",
-   "name": "Citra Ayu (IPA, sesi simulasi)",
-   "username": "004.ipa.panelis1"
+   "name": "Fajar Nugroho · Bahasa Indonesia",
+   "username": "001.bin.panelis1",
+   "note": "Baru mengisi 2 dari 3 butir"
   },
   {
+   "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
+   "role": "Panelis",
+   "name": "Maya Anggraini · Bahasa Indonesia",
+   "username": "001.bin.panelis2",
+   "note": "Belum mulai mengisi"
+  },
+  {
+   "group": "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)",
    "role": "PIC Mapel",
-   "name": "Bambang Sutrisno (IPA, sesi simulasi)",
-   "username": "004.ipa.pic1"
+   "name": "Bambang Sutrisno · IPA",
+   "username": "004.ipa.pic1",
+   "note": "Pantau latihan, tulis JQC, Akhiri Simulasi & Mulai Putaran 1"
   },
   {
+   "group": "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)",
+   "role": "Panelis",
+   "name": "Citra Ayu · IPA",
+   "username": "004.ipa.panelis1",
+   "note": "Mulai dari sambutan dan latihan"
+  },
+  {
+   "group": "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)",
+   "role": "Panelis",
+   "name": "Dimas Prakoso · IPA",
+   "username": "004.ipa.panelis2",
+   "note": "Latihan 2 dari 3 butir"
+  },
+  {
+   "group": "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)",
+   "role": "Panelis",
+   "name": "Eka Putri · IPA",
+   "username": "004.ipa.panelis3",
+   "note": "Latihan selesai: layar Menunggu PIC Mapel"
+  },
+  {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "PIC Mapel",
-   "group": "Uji coba lengkap · Matematika",
-   "name": "Rahmat Hidayat",
-   "username": "005.mat.pic1"
+   "name": "Rahmat Hidayat · Matematika",
+   "username": "005.mat.pic1",
+   "note": "Belum ada JQC; jalankan simulasi sampai putaran akhir"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Matematika",
-   "name": "Nurul Aini",
-   "username": "005.mat.panelis1"
+   "name": "Nurul Aini · Matematika",
+   "username": "005.mat.panelis1",
+   "note": "Login → isi kontak → sambutan → simulasi"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Matematika",
-   "name": "Yoga Pratama",
-   "username": "005.mat.panelis2"
+   "name": "Yoga Pratama · Matematika",
+   "username": "005.mat.panelis2",
+   "note": "Login → isi kontak → sambutan → simulasi"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Matematika",
-   "name": "Indah Permata",
-   "username": "005.mat.panelis3"
+   "name": "Indah Permata · Matematika",
+   "username": "005.mat.panelis3",
+   "note": "Login pertama: wajib ganti password (lama demo123), lalu isi kontak"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "PIC Mapel",
-   "group": "Uji coba lengkap · Bahasa Indonesia",
-   "name": "Siti Rahmawati",
-   "username": "005.bin.pic1"
+   "name": "Siti Rahmawati · Bahasa Indonesia",
+   "username": "005.bin.pic1",
+   "note": "Belum ada JQC"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Bahasa Indonesia",
-   "name": "Teguh Santosa",
-   "username": "005.bin.panelis1"
+   "name": "Teguh Santosa · Bahasa Indonesia",
+   "username": "005.bin.panelis1",
+   "note": "Login → isi kontak → sambutan → simulasi"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Bahasa Indonesia",
-   "name": "Wulan Sari",
-   "username": "005.bin.panelis2"
+   "name": "Wulan Sari · Bahasa Indonesia",
+   "username": "005.bin.panelis2",
+   "note": "Login → isi kontak → sambutan → simulasi"
   },
   {
+   "group": "Proyek 005 · Uji Coba Lengkap (semua akun baru)",
    "role": "Panelis",
-   "group": "Uji coba lengkap · Bahasa Indonesia",
-   "name": "Galih Putra",
-   "username": "005.bin.panelis3"
+   "name": "Galih Putra · Bahasa Indonesia",
+   "username": "005.bin.panelis3",
+   "note": "Login → isi kontak → sambutan → simulasi"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "PIC Mapel",
+   "name": "Hadi Kurniawan · IPS",
+   "username": "006.ips.pic1",
+   "note": "Putaran 1 dibuka kembali: sisa tinjauan, 1 panelis dikecualikan"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Ratih Purnama · IPS",
+   "username": "006.ips.panelis1",
+   "note": "Semua butir Perlu ditinjau → Konfirmasi jawaban"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Bayu Saputra · IPS",
+   "username": "006.ips.panelis2",
+   "note": "Sebagian butir sudah dikonfirmasi ulang"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Nina Kartika · IPS",
+   "username": "006.ips.panelis3",
+   "note": "Perlu meninjau ulang semua butir"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Oki Firmansyah · IPS",
+   "username": "006.ips.panelis4",
+   "note": "Tidak diikutkan (berhalangan): borang hanya-baca"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "PIC Mapel",
+   "name": "Lestari Handayani · PKN",
+   "username": "006.pkn.pic1",
+   "note": "Semua putaran selesai: rekap kuesioner 1 dari 3, Tambah/Buka kembali putaran"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Rizky Ananda · PKN",
+   "username": "006.pkn.panelis1",
+   "note": "Kuesioner sudah dikirim (bisa diubah)"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Putri Maharani · PKN",
+   "username": "006.pkn.panelis2",
+   "note": "Kuesioner evaluasi belum diisi"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Galang Pratama · PKN",
+   "username": "006.pkn.panelis3",
+   "note": "Kuesioner belum diisi; lihat hasil akhir"
+  },
+  {
+   "group": "Proyek 002 · Uji Coba IPA (selesai)",
+   "role": "PIC Mapel",
+   "name": "Hendra Wijaya · IPA",
+   "username": "002.ipa.pic1",
+   "note": "Proyek selesai: hasil hanya-baca, rekap kuesioner"
+  },
+  {
+   "group": "Proyek 002 · Uji Coba IPA (selesai)",
+   "role": "Panelis",
+   "name": "Lina Marlina · IPA",
+   "username": "002.ipa.panelis1",
+   "note": "Kuesioner sudah dikirim; jawaban hanya-baca"
+  },
+  {
+   "group": "Proyek 002 · Uji Coba IPA (selesai)",
+   "role": "Panelis",
+   "name": "Rudi Hartono · IPA",
+   "username": "002.ipa.panelis2",
+   "note": "Kuesioner sudah dikirim"
   }
  ]
 }

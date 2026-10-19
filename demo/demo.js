@@ -111,7 +111,9 @@
   .ssd-role{grid-row:span 2;align-self:center;min-width:52px;text-align:center;padding:2px 6px;border-radius:6px;background:#eef6f4;color:#235752;font-size:11px;font-weight:700}
   .ssd-acc span.ssd-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .ssd-acc button:hover,.ssd-acc button:focus-visible{border-color:#2f6f69;background:#eef6f4}
-  .ssd-acc small{color:#5b6b68}.ssd-acc code{font:12px ui-monospace,Menlo,monospace}
+  .ssd-acc small{color:#5b6b68}.ssd-acc small.ssd-note{color:#2f4f4b;font-size:11.5px;line-height:1.35;white-space:normal}
+  .ssd-filter{width:100%;padding:7px 10px;border:1px solid #cfdcd9;border-radius:8px;font:inherit}
+  .ssd-filter:focus{outline:2px solid #2f6f69;outline-offset:0;border-color:#2f6f69}.ssd-acc code{font:12px ui-monospace,Menlo,monospace}
   .ssd-row{display:flex;gap:8px;justify-content:space-between;align-items:center}
   .ssd-reset{all:unset;cursor:pointer;color:#b03a2e;font-weight:600}
   .ssd-reset:focus-visible{outline:2px solid #b03a2e;outline-offset:2px}
@@ -122,7 +124,13 @@
   .ssd-tours button:hover,.ssd-tours button:focus-visible{background:#235752}
   .ssd-tours small{color:#4b5f5b}
   `;
-  let open = false, status = 'loading', statusText = '', tourError = '';
+  let open = false, status = 'loading', statusText = '', tourError = '', filter = '';
+  const esc = (v) => String(v ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+  function shownAccounts() {
+    const q = filter.trim().toLowerCase();
+    return accounts.accounts.filter((a) => (store.get(MODE_KEY) !== 'empty' || a.role === 'Admin Super')
+      && (!q || [a.name, a.username, a.role, a.group, a.note].join(' ').toLowerCase().includes(q)));
+  }
   const root = document.createElement('div');
   root.className = 'ssd';
   function setStatus(next, text = '') { status = next; statusText = text; render(); }
@@ -158,7 +166,8 @@
         ${tourError ? `<p style="color:#b03a2e">${tourError}</p>` : ''}
         ${store.get(MODE_KEY) === 'empty' ? `<p class="ssd-empty"><b>Mode kosong.</b> Hanya akun Admin Super; belum ada proyek, butir, maupun akun lain. Unggah butir di menu ID Butir, buat proyek di wizard, unggah nama PIC/panelis di tahap 3, lalu buat akun di tahap 4 (username dan password awal tampil di sana dan di menu Akun). Klik <b>Reset data demo</b> untuk kembali ke data contoh.</p>` : ''}
         <p>Klik akun untuk mengisi form login · password <code>${accounts.password}</code></p>
-        <div class="ssd-acc">${accounts.accounts.filter((a) => store.get(MODE_KEY) !== 'empty' || a.role === 'Admin Super').map((a, i, all) => `${a.group && a.group !== all[i - 1]?.group ? `<p class="ssd-group">${a.group} <span>· panelis mulai dari isi kontak, sambutan, lalu simulasi</span></p>` : ''}<button data-user="${a.username}" title="${a.role} · ${a.name}"><span class="ssd-role">${a.role === 'Admin Super' ? 'Admin' : a.role === 'PIC Mapel' ? 'PIC' : 'Panelis'}</span><span class="ssd-name">${a.name}</span><small><code>${a.username}</code></small></button>`).join('')}</div>
+        <input class="ssd-filter" type="search" data-filter placeholder="Cari nama, mapel, atau kasus (mis. kuesioner)" value="${esc(filter)}" aria-label="Cari akun demo"/>
+        <div class="ssd-acc">${shownAccounts().map((a, i, all) => `${a.group && a.group !== all[i - 1]?.group ? `<p class="ssd-group">${esc(a.group)}${accounts.groups?.[a.group] ? ` <span>· ${esc(accounts.groups[a.group])}</span>` : ''}</p>` : ''}<button data-user="${esc(a.username)}" title="${esc(a.role)} · ${esc(a.name)}"><span class="ssd-role">${a.role === 'Admin Super' ? 'Admin' : a.role === 'PIC Mapel' ? 'PIC' : 'Panelis'}</span><span class="ssd-name">${esc(a.name)}</span>${a.note ? `<small class="ssd-note">${esc(a.note)}</small>` : ''}<small><code>${esc(a.username)}</code></small></button>`).join('') || '<p class="ssd-empty">Tidak ada akun yang cocok.</p>'}</div>
         </div>
         <div class="ssd-foot ssd-row"><button class="ssd-reset ssd-empty-btn" data-empty title="Hapus semua proyek, butir, dan akun kecuali Admin Super">Kosongkan data</button><button class="ssd-reset" data-reset>Reset data demo</button></div>
       </div>` : ''}
@@ -178,6 +187,13 @@
     if ('reset' in t.dataset) { store.remove(MODE_KEY); store.remove(STATE_KEY); store.remove(SESSION_KEY); clearPanelistFlags(); location.href = `${base}/login`; return; }
     open = 'toggle' in t.dataset ? !open : false;
     render();
+  });
+  root.addEventListener('input', (event) => {
+    if (!event.target.matches('[data-filter]')) return;
+    filter = event.target.value;
+    const pos = event.target.selectionStart;
+    render();
+    const el = root.querySelector('[data-filter]'); if (el) { el.focus(); el.setSelectionRange(pos, pos); }
   });
   root.addEventListener('keydown', (event) => { if ((event.key === 'Enter' || event.key === ' ') && event.target.matches('[data-toggle]')) { event.preventDefault(); open = !open; render(); } });
   // Close the panel with Esc or a click elsewhere.
