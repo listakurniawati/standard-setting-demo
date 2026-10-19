@@ -1,0 +1,1 @@
+import{h as o,i as l,j as m,E as v,k as y,l as f,m as p,n as i,H as T,q as A}from"./D10BPla1.js";import{B as E}from"./DBQPMniO.js";function k(d,_,e){var s;o&&(s=A,l());var r=new E(d);m(()=>{var a=_()??null;if(o){var h=y(s),c=h===T,u=a!==null;if(c!==u){var t=f();p(t),r.anchor=t,i(!1),r.ensure(a,a&&(n=>e(n,a))),i(!0);return}}r.ensure(a,a&&(n=>e(n,a)))},v)}export{k as c};
