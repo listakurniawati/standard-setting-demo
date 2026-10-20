@@ -5,8 +5,9 @@
   "Proyek 001 · Asesmen Oktober 2026 (aktif)": "MAT putaran 2 berjalan, BIN putaran 1",
   "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)": "Panelis berlatih 3 butir contoh; PIC mengakhiri simulasi",
   "Proyek 005 · Uji Coba Lengkap (semua akun baru)": "Mulai dari nol: kontak, sambutan, tur, simulasi, JQC",
-  "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, kuesioner",
-  "Proyek 002 · Uji Coba IPA (selesai)": "Hasil final terkunci, rekap kuesioner"
+  "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, penetapan NBK final, kuesioner",
+  "Proyek 002 · Uji Coba IPA (selesai)": "3 putaran selesai, proyek diselesaikan, rekap kuesioner",
+  "Proyek 007 · Demo Tahapan Putaran (aktif)": "Satu mapel per tahap: putaran 1–3 berjalan atau siap dikunci, sampai NBK final + kuesioner"
  },
  "accounts": [
   {
@@ -189,7 +190,7 @@
    "role": "PIC Mapel",
    "name": "Lestari Handayani · PKN",
    "username": "006.pkn.pic1",
-   "note": "Semua putaran selesai: rekap kuesioner 1 dari 3, Tambah/Buka kembali putaran"
+   "note": "NBK final sudah ditetapkan: rekap kuesioner 1 dari 3"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
@@ -211,6 +212,223 @@
    "name": "Galang Pratama · PKN",
    "username": "006.pkn.panelis3",
    "note": "Kuesioner belum diisi; lihat hasil akhir"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "PIC Mapel",
+   "name": "Yusuf Maulana · Sejarah",
+   "username": "006.sej.pic1",
+   "note": "Semua putaran selesai, NBK final belum ditetapkan: tombol Tetapkan NBK Final"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Dian Safitri · Sejarah",
+   "username": "006.sej.panelis1",
+   "note": "Menunggu PIC menetapkan NBK final (kuesioner belum muncul)"
+  },
+  {
+   "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
+   "role": "Panelis",
+   "name": "Arif Rahman · Sejarah",
+   "username": "006.sej.panelis2",
+   "note": "Menunggu NBK final; setelah PIC menetapkan, kuesioner muncul"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Andini Saraswati · Biologi",
+   "username": "007.bio.pic1",
+   "note": "Putaran 1 berjalan"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Bagus Wicaksono · Biologi",
+   "username": "007.bio.panelis1",
+   "note": "Sudah kirim putaran 1"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Citra Lestari · Biologi",
+   "username": "007.bio.panelis2",
+   "note": "Mengisi putaran 1 (2 dari 3 butir)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Deni Setiawan · Biologi",
+   "username": "007.bio.panelis3",
+   "note": "Belum mulai putaran 1"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Eko Prasetyo · Fisika",
+   "username": "007.fis.pic1",
+   "note": "Putaran 1: semua panelis sudah kirim, siap dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Fitri Handayani · Fisika",
+   "username": "007.fis.panelis1",
+   "note": "Sudah kirim putaran 1, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Gilang Ramadhan · Fisika",
+   "username": "007.fis.panelis2",
+   "note": "Sudah kirim putaran 1, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Hana Pertiwi · Fisika",
+   "username": "007.fis.panelis3",
+   "note": "Sudah kirim putaran 1, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Irwan Susanto · Kimia",
+   "username": "007.kim.pic1",
+   "note": "Putaran 2 berjalan (putaran 1 terkunci)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Joko Santoso · Kimia",
+   "username": "007.kim.panelis1",
+   "note": "Sudah kirim putaran 2"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Kartika Dewi · Kimia",
+   "username": "007.kim.panelis2",
+   "note": "Mengisi putaran 2 (2 dari 3 butir)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Lukman Hakim · Kimia",
+   "username": "007.kim.panelis3",
+   "note": "Belum mulai putaran 2: lihat hasil putaran 1"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Mega Puspita · Geografi",
+   "username": "007.geo.pic1",
+   "note": "Putaran 2: semua panelis sudah kirim, siap dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Nanda Pratama · Geografi",
+   "username": "007.geo.panelis1",
+   "note": "Sudah kirim putaran 2, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Octavia Sari · Geografi",
+   "username": "007.geo.panelis2",
+   "note": "Sudah kirim putaran 2, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Pandu Wibowo · Geografi",
+   "username": "007.geo.panelis3",
+   "note": "Sudah kirim putaran 2, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Qori Amalia · Ekonomi",
+   "username": "007.eko.pic1",
+   "note": "Putaran 3 (terakhir) berjalan"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Reza Firmansyah · Ekonomi",
+   "username": "007.eko.panelis1",
+   "note": "Sudah kirim putaran 3"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Sinta Maharani · Ekonomi",
+   "username": "007.eko.panelis2",
+   "note": "Mengisi putaran 3 (2 dari 3 butir)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Tomi Kurniawan · Ekonomi",
+   "username": "007.eko.panelis3",
+   "note": "Belum mulai putaran 3: lihat hasil putaran 2"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Umar Said · Sosiologi",
+   "username": "007.sos.pic1",
+   "note": "Putaran 3: semua sudah kirim, siap Finalisasi Putaran Terakhir lalu Tetapkan NBK Final"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Vina Oktaviani · Sosiologi",
+   "username": "007.sos.panelis1",
+   "note": "Sudah kirim putaran 3, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Wahyu Hidayat · Sosiologi",
+   "username": "007.sos.panelis2",
+   "note": "Sudah kirim putaran 3, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Yani Kusuma · Sosiologi",
+   "username": "007.sos.panelis3",
+   "note": "Sudah kirim putaran 3, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "PIC Mapel",
+   "name": "Zahra Aulia · Bahasa Inggris",
+   "username": "007.ing.pic1",
+   "note": "NBK final ditetapkan dari putaran 3: rekap kuesioner (1 dari 3 mengisi)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Adit Nugraha · Bahasa Inggris",
+   "username": "007.ing.panelis1",
+   "note": "Kuesioner sudah dikirim (bisa diubah)"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Bella Safira · Bahasa Inggris",
+   "username": "007.ing.panelis2",
+   "note": "Kuesioner terbuka, belum diisi: coba isi"
+  },
+  {
+   "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
+   "role": "Panelis",
+   "name": "Candra Wijaya · Bahasa Inggris",
+   "username": "007.ing.panelis3",
+   "note": "Kuesioner terbuka, belum diisi"
   },
   {
    "group": "Proyek 002 · Uji Coba IPA (selesai)",
