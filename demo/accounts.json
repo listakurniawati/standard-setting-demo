@@ -2,12 +2,12 @@
  "password": "demo123",
  "groups": {
   "Admin": "Kelola proyek, butir, akun, riwayat aktivitas, salin proyek",
-  "Proyek 001 · Asesmen Oktober 2026 (aktif)": "MAT putaran 2 berjalan, BIN putaran 1",
+  "Proyek 001 · Asesmen Oktober 2026 (aktif)": "MAT putaran 2 berjalan, BIN putaran 1; ada data proyeksi lulus",
   "Proyek 004 · UKPPPG dengan Simulasi (sesi latihan)": "Panelis berlatih 3 butir contoh; PIC mengakhiri simulasi",
   "Proyek 005 · Uji Coba Lengkap (semua akun baru)": "Mulai dari nol: kontak, sambutan, tur, simulasi, JQC",
-  "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, penetapan NBK final, kuesioner",
+  "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, penetapan NBK final, kuesioner; ada data proyeksi lulus",
   "Proyek 002 · Uji Coba IPA (selesai)": "3 putaran selesai, proyek diselesaikan, rekap kuesioner",
-  "Proyek 007 · Demo Tahapan Putaran (aktif)": "Satu mapel per tahap: putaran 1–3 berjalan atau siap dikunci, sampai NBK final + kuesioner"
+  "Proyek 007 · Demo Tahapan Putaran (aktif)": "Satu mapel per tahap: putaran 1–3 berjalan atau siap dikunci, sampai NBK final + kuesioner; proyeksi lulus di semua mapel"
  },
  "accounts": [
   {
@@ -15,14 +15,14 @@
    "role": "Admin Super",
    "name": "Master BP3",
    "username": "master.bp3",
-   "note": "Semua menu; coba Salin proyek dan tab Riwayat Aktivitas di Akun Pengguna"
+   "note": "Semua menu; Salin proyek; Riwayat Aktivitas; Monitoring › Seluruh Mapel › Simulasi kelulusan (unggah data proyeksi lulus)"
   },
   {
    "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
    "role": "PIC Mapel",
    "name": "Rina Wulandari · Matematika",
    "username": "001.mat.pic1",
-   "note": "Putaran 2 berjalan: antrean, tanda Perlu dicek, koneksi tidak stabil, mode diskusi, ekspor"
+   "note": "Putaran 2 berjalan: antrean, Perlu dicek, koneksi tidak stabil, mode diskusi, ekspor, proyeksi lulus di Kesimpulan"
   },
   {
    "group": "Proyek 001 · Asesmen Oktober 2026 (aktif)",
@@ -190,7 +190,7 @@
    "role": "PIC Mapel",
    "name": "Lestari Handayani · PKN",
    "username": "006.pkn.pic1",
-   "note": "NBK final sudah ditetapkan: rekap kuesioner 1 dari 3"
+   "note": "NBK final ditetapkan: rekap kuesioner 1 dari 3, proyeksi lulus putaran 1–3"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
@@ -407,7 +407,7 @@
    "role": "PIC Mapel",
    "name": "Zahra Aulia · Bahasa Inggris",
    "username": "007.ing.pic1",
-   "note": "NBK final ditetapkan dari putaran 3: rekap kuesioner (1 dari 3 mengisi)"
+   "note": "NBK final ditetapkan dari putaran 3: rekap kuesioner (1 dari 3 mengisi), proyeksi lulus putaran 1–3"
   },
   {
    "group": "Proyek 007 · Demo Tahapan Putaran (aktif)",
