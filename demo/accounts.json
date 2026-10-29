@@ -7,6 +7,7 @@
   "Proyek 005 · Uji Coba Lengkap (semua akun baru)": "Mulai dari nol: kontak, sambutan, tur, simulasi, JQC",
   "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, penetapan NBK final, kuesioner; ada data proyeksi lulus",
   "Proyek 002 · Uji Coba IPA (selesai)": "3 putaran selesai, proyek diselesaikan, rekap kuesioner",
+  "Proyek 008 · Skala Penuh 80 Butir (aktif)": "1 mapel (PGSD), 80 butir termasuk Essay, 5 panelis: putaran 1 terkunci, putaran 2 berjalan; ada data proyeksi lulus",
   "Proyek 007 · Demo Tahapan Putaran (aktif)": "Satu mapel per tahap: putaran 1–3 berjalan atau siap dikunci, sampai NBK final + kuesioner; proyeksi lulus di semua mapel"
  },
  "accounts": [
@@ -429,6 +430,48 @@
    "name": "Candra Wijaya · Bahasa Inggris",
    "username": "007.ing.panelis3",
    "note": "Kuesioner terbuka, belum diisi"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "PIC Mapel",
+   "name": "Ratna Sari Dewi · PGSD",
+   "username": "008.pgsd.pic1",
+   "note": "Putaran 2 berjalan: 80 butir di Hasil per Butir, Arahan PIC, mode diskusi, ekspor"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "Panelis",
+   "name": "Ahmad Fauzi · PGSD",
+   "username": "008.pgsd.panelis1",
+   "note": "Sudah kirim putaran 2, menunggu dikunci"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "Panelis",
+   "name": "Bunga Lestari · PGSD",
+   "username": "008.pgsd.panelis2",
+   "note": "Mengisi putaran 2 (40 dari 80 butir direvisi)"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "Panelis",
+   "name": "Cahyo Nugroho · PGSD",
+   "username": "008.pgsd.panelis3",
+   "note": "Belum mulai putaran 2: lihat hasil putaran 1, jawaban putaran 1 sudah terisi"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "Panelis",
+   "name": "Dina Rahayu · PGSD",
+   "username": "008.pgsd.panelis4",
+   "note": "Belum mulai putaran 2"
+  },
+  {
+   "group": "Proyek 008 · Skala Penuh 80 Butir (aktif)",
+   "role": "Panelis",
+   "name": "Erwin Saputra · PGSD",
+   "username": "008.pgsd.panelis5",
+   "note": "Belum mulai putaran 2"
   },
   {
    "group": "Proyek 002 · Uji Coba IPA (selesai)",
