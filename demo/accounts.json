@@ -155,28 +155,28 @@
    "role": "PIC Mapel",
    "name": "Hadi Kurniawan · IPS",
    "username": "006.ips.pic1",
-   "note": "Putaran 1 dibuka kembali: sisa tinjauan, 1 panelis dikecualikan"
+   "note": "Putaran 1 dibuka kembali: menunggu panelis mengirim lagi, 1 panelis dikecualikan"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
    "role": "Panelis",
    "name": "Ratih Purnama · IPS",
    "username": "006.ips.panelis1",
-   "note": "Semua butir Perlu ditinjau → Konfirmasi jawaban"
+   "note": "Putaran 1 dibuka kembali: jawaban tetap terisi, tinggal Saya selesai lagi"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
    "role": "Panelis",
    "name": "Bayu Saputra · IPS",
    "username": "006.ips.panelis2",
-   "note": "Sebagian butir sudah dikonfirmasi ulang"
+   "note": "Putaran 1 dibuka kembali: ubah bila perlu, lalu Saya selesai"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
    "role": "Panelis",
    "name": "Nina Kartika · IPS",
    "username": "006.ips.panelis3",
-   "note": "Perlu meninjau ulang semua butir"
+   "note": "Putaran 1 dibuka kembali: jawaban tetap terisi"
   },
   {
    "group": "Proyek 006 · Demo Kasus Khusus (aktif)",
