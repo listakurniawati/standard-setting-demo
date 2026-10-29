@@ -7,6 +7,9 @@
   "Proyek 005 · Uji Coba Lengkap (semua akun baru)": "Mulai dari nol: kontak, sambutan, tur, simulasi, JQC",
   "Proyek 006 · Demo Kasus Khusus (aktif)": "Panelis berhalangan, putaran dibuka kembali, penetapan NBK final, kuesioner; ada data proyeksi lulus",
   "Proyek 002 · Uji Coba IPA (selesai)": "3 putaran selesai, proyek diselesaikan, rekap kuesioner",
+  "Proyek 009 · Uji Penskoran MCMA — Multiple True/False": "MCMA skor 0–5: setiap opsi bernilai 1 bila sesuai kunci (opsi benar dipilih, opsi salah tidak dipilih). Butir sama dengan proyek 010 dan 011",
+  "Proyek 010 · Uji Penskoran MCMA — Polytomous Trapdoor": "MCMA skor 0–banyak kunci: opsi benar yang dipilih = 1, tetapi skor butir 0 bila ada opsi salah yang ikut dipilih. Butir sama dengan proyek 009 dan 011",
+  "Proyek 011 · Uji Penskoran MCMA — Positive Count": "MCMA skor 0–banyak kunci: opsi benar yang dipilih = 1, opsi salah tidak mengurangi. Butir sama dengan proyek 009 dan 010",
   "Proyek 008 · Skala Penuh 80 Butir (aktif)": "1 mapel (PGSD), 80 butir termasuk Essay, 5 panelis: putaran 1 terkunci, putaran 2 berjalan; ada data proyeksi lulus",
   "Proyek 007 · Demo Tahapan Putaran (aktif)": "Satu mapel per tahap: putaran 1–3 berjalan atau siap dikunci, sampai NBK final + kuesioner; proyeksi lulus di semua mapel"
  },
@@ -472,6 +475,90 @@
    "name": "Erwin Saputra · PGSD",
    "username": "008.pgsd.panelis5",
    "note": "Belum mulai putaran 2"
+  },
+  {
+   "group": "Proyek 009 · Uji Penskoran MCMA — Multiple True/False",
+   "role": "PIC Mapel",
+   "name": "Wulan Sasmita · MCM",
+   "username": "009.mcm.pic1",
+   "note": "Putaran 1 berjalan: lihat Bentuk dan maks skor MCMA di Hasil per Butir; header monitoring menyebut metode penskoran"
+  },
+  {
+   "group": "Proyek 009 · Uji Penskoran MCMA — Multiple True/False",
+   "role": "Panelis",
+   "name": "Arya Pratama · MCM",
+   "username": "009.mcm.panelis1",
+   "note": "Sudah kirim Putaran 1 (Lihat jawaban)"
+  },
+  {
+   "group": "Proyek 009 · Uji Penskoran MCMA — Multiple True/False",
+   "role": "Panelis",
+   "name": "Bintang Maharani · MCM",
+   "username": "009.mcm.panelis2",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
+  },
+  {
+   "group": "Proyek 009 · Uji Penskoran MCMA — Multiple True/False",
+   "role": "Panelis",
+   "name": "Cakra Wijaya · MCM",
+   "username": "009.mcm.panelis3",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
+  },
+  {
+   "group": "Proyek 010 · Uji Penskoran MCMA — Polytomous Trapdoor",
+   "role": "PIC Mapel",
+   "name": "Tri Handoko · MCM",
+   "username": "010.mcm.pic1",
+   "note": "Putaran 1 berjalan: lihat Bentuk dan maks skor MCMA di Hasil per Butir; header monitoring menyebut metode penskoran"
+  },
+  {
+   "group": "Proyek 010 · Uji Penskoran MCMA — Polytomous Trapdoor",
+   "role": "Panelis",
+   "name": "Dimas Ardian · MCM",
+   "username": "010.mcm.panelis1",
+   "note": "Sudah kirim Putaran 1 (Lihat jawaban)"
+  },
+  {
+   "group": "Proyek 010 · Uji Penskoran MCMA — Polytomous Trapdoor",
+   "role": "Panelis",
+   "name": "Elsa Novitasari · MCM",
+   "username": "010.mcm.panelis2",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
+  },
+  {
+   "group": "Proyek 010 · Uji Penskoran MCMA — Polytomous Trapdoor",
+   "role": "Panelis",
+   "name": "Fikri Ramadhan · MCM",
+   "username": "010.mcm.panelis3",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
+  },
+  {
+   "group": "Proyek 011 · Uji Penskoran MCMA — Positive Count",
+   "role": "PIC Mapel",
+   "name": "Puspa Ayuningtyas · MCM",
+   "username": "011.mcm.pic1",
+   "note": "Putaran 1 berjalan: lihat Bentuk dan maks skor MCMA di Hasil per Butir; header monitoring menyebut metode penskoran"
+  },
+  {
+   "group": "Proyek 011 · Uji Penskoran MCMA — Positive Count",
+   "role": "Panelis",
+   "name": "Gita Lestari · MCM",
+   "username": "011.mcm.panelis1",
+   "note": "Sudah kirim Putaran 1 (Lihat jawaban)"
+  },
+  {
+   "group": "Proyek 011 · Uji Penskoran MCMA — Positive Count",
+   "role": "Panelis",
+   "name": "Hendra Saputra · MCM",
+   "username": "011.mcm.panelis2",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
+  },
+  {
+   "group": "Proyek 011 · Uji Penskoran MCMA — Positive Count",
+   "role": "Panelis",
+   "name": "Intan Permatasari · MCM",
+   "username": "011.mcm.panelis3",
+   "note": "Belum mulai Putaran 1: buka (i) di samping bentuk soal MCMA untuk Coba hitung"
   },
   {
    "group": "Proyek 002 · Uji Coba IPA (selesai)",
