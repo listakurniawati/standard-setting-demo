@@ -1,0 +1,1 @@
+import{w as o}from"./66fb37ed.js";import{r,w as s}from"./d80dc856.js";function a(){const e=o(r());return{subscribe:e.subscribe,set(t){s(t),e.set(t)},clear(){s(null),e.set(null)},hydrate(){e.set(r())}}}const u=a();export{u as a};
